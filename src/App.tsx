@@ -1,11 +1,15 @@
 import React from "react";
 import "./App.css";
-import Icon from "./Icon";
+import { colors } from "./constants/colors";
+import CardBackground from "./components/CardBackground";
+import Card from "./components/Card";
 
 function App() {
   return (
-    <div className="App">
-	  <Icon/>
+    <div className="App flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-row">
+        <Card />
+      </div>
     </div>
   );
 }

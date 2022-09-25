@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-function Icon() {
-  const [height, setHeight] = useState(291);
+function CardBackground() {
   // TODO: make it responsive using useEffect hook
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
   return (
     <svg
+      className="relative w-full h-1/3 -z-10"
       xmlns="http://www.w3.org/2000/svg"
-      width={height}
-      height="351"
-      fill="black"
+      fill="transparent"
       viewBox="0 0 291 351"
     >
       <g filter="url(#filter0_b_1_1504)">
@@ -24,6 +21,7 @@ function Icon() {
           d="M201.333 23.95v-.001A36.213 36.213 0 01234.741 1.42h38.999a16.499 16.499 0 0116.5 16.5V334c0 4.376-1.738 8.573-4.833 11.667a16.496 16.496 0 01-11.667 4.833H17A16.497 16.497 0 01.5 334V17.92A16.5 16.5 0 0117 1.42h39a36.21 36.21 0 0133.407 22.529v.001a60.503 60.503 0 0055.963 37.512 60.502 60.502 0 0055.963-37.512z"
         ></path>
       </g>
+
       <defs>
         <filter
           id="filter0_b_1_1504"
@@ -77,5 +75,4 @@ function Icon() {
   );
 }
 
-export default Icon;
-
+export default CardBackground;
