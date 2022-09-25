@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+.outerContainer {
+  position: absolute;
+  height: 225px;
+  width: 100%;
+  margin: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* create a reactangular div with a curve at the top */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.circularLogoContainer {
+  height: 60px;
+  width: 20%;
+  background-color: transparent;
+  position: absolute;
+  margin: 40px;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.circularLogo {
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  border-radius: 50%;
+  border: 10px solid #FFFFFF;
+  position: absolute;
+  margin: 40px;
+  z-index: 1000;
+  transform: translate(0%, -40%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.outerContainer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 10%;
+  width: 20%;
+  height: 100%;
+  background-color: blue;
+}
+
+.outerContainer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
 }
