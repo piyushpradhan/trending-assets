@@ -1,18 +1,13 @@
 import React from "react";
 
-function CurrencyLogo() {
+interface Logo {
+  image: string;
+}
+
+function CurrencyLogo(logo: Logo) {
   return (
-    <div className="circularLogoContainer">
-      <div className="beforeCircle"></div>
-      <div className="circularLogoBg"></div>
-      <div className="circularLogo">
-        <img
-          className="bitcoinLogoImage"
-          src="./bitcoin.png"
-          alt="bitcoin logo"
-        />
-      </div>
-      <div className="afterCircle"></div>
+    <div className="p-4 shadow-valueShadow flex flex-col justify-center items-center rounded-full bg-gradient-to-b from-[#626A881A] to-[#EAB3000F]">
+      <img src={logo.image} alt="logo" width="40px" height="40px" />
     </div>
   );
 }

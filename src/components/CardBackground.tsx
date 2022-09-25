@@ -5,7 +5,7 @@ function CardBackground() {
   useEffect(() => {}, []);
   return (
     <svg
-      className="relative w-full h-1/3 -z-10"
+      className="relative w-3/4 -z-10"
       xmlns="http://www.w3.org/2000/svg"
       fill="transparent"
       viewBox="0 0 291 351"
