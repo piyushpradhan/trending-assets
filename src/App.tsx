@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Card from "./components/Card";
+import Card from "./components/CustomCard";
 import { CurrencyType } from "./constants/types";
 
 function App() {
@@ -42,10 +42,10 @@ function App() {
       </div>
       <div className="px-32 flex md:flex-row flex-col w-full justify-between items-center space-x-16">
         <Card currency={bitcoin} />
-        <Card currency={solana} />
+        {/* <Card currency={solana} />
         <Card currency={ethereum} />
         <Card currency={binance} />
-        <Card currency={shiba} />
+        <Card currency={shiba} /> */}
       </div>
     </div>
   );

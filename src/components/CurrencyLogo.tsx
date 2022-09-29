@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/currencyLogo.css";
 
 interface Logo {
   image: string;
@@ -6,8 +7,14 @@ interface Logo {
 
 function CurrencyLogo(logo: Logo) {
   return (
-    <div className="p-4 shadow-valueShadow flex flex-col justify-center items-center rounded-full bg-gradient-to-b from-[#626A881A] to-[#EAB3000F]">
-      <img src={logo.image} alt="logo" width="40px" height="40px" />
+    <div className="logoContainer">
+      <img
+        className="logo"
+        src={logo.image}
+        alt="logo"
+        width="40px"
+        height="40px"
+      />
     </div>
   );
 }

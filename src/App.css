@@ -16,6 +16,9 @@
   --logo-bg-gradient-bottom: #EAB3000F;
   --bitcoin-bg-gradient-top: #626A881A;
   --bitcoin-bg-gradient-bottom: #EAB3000F;
+
+
+  --container-padding: 40px;
 }
 
 body {
@@ -99,6 +102,7 @@ body {
 
 .outerContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -108,4 +112,61 @@ body {
   padding: 20px 30px;
   height: 225px;
   background: linear-gradient(to bottom, var(--outer-bg-gradient-top), var(--outer-bg-gradient-bottom)) padding-box;
+}
+
+
+/* ------------------------------------------------- */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--container-padding);
+}
+
+.card {
+  position: relative; 
+  width: 320px;
+  height: 450px;
+  background: linear-gradient(to bottom, var(--outer-bg-gradient-top), var(--outer-bg-gradient-bottom));
+  margin: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.icon {
+  position: relative;
+  width: 8.75rem;
+  height: 8.75rem;
+  background: var(--clr);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  transform: translateY(-40%);
+}
+
+.icon::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: -2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-top-right-radius: 2.5rem;
+  box-shadow: 15px -15px 0 15px var(--clr);
+}
+
+.icon::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  right: -2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-top-left-radius: 2.5rem;
+  box-shadow: -15px -15px 0 15px var(--clr);
 }
