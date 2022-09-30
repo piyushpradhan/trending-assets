@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Card from "./components/Card";
+import Card from "./components/CustomCard";
 import { CurrencyType } from "./constants/types";
 
 function App() {
@@ -35,12 +35,12 @@ function App() {
     change: "-8.1%",
   };
   return (
-    <div className="w-screen h-screen m-0 flex flex-col space-y-32 justify-center items-center">
-      <div className="px-32 w-full flex flex-row justify-start items-center space-x-4">
+    <div className="w-full h-full flex flex-col space-y-8 justify-center items-start">
+      <div className="px-24 mt-24 mb-32 w-full flex flex-row justify-start items-center space-x-4">
         <img src="./images/activity.svg" alt="trending assets" />
         <p className="text-xl text-valueText">Trending assets</p>
       </div>
-      <div className="px-32 flex md:flex-row flex-col w-full justify-between items-center space-x-16">
+      <div className="px-8 flex lg:flex-row w-full flex-col justify-between items-start">
         <Card currency={bitcoin} />
         <Card currency={solana} />
         <Card currency={ethereum} />

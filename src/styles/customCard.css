@@ -1,0 +1,104 @@
+:root {
+    --clr: #14172B;
+    --bg-color: #14172B;
+    --border-color-gradient-top: #ECF0FF1A;
+    --border-color-gradient-bottom: #3B3F5700;
+    --outer-bg-gradient-top: #626A881A;
+    --outer-bg-gradient-bottom: #2E31491A;
+    --curve-offset-x: -1.5rem; 
+    --curve-offset-y: 40%;
+    --curve-radius: 1.5rem; 
+    --curve-shadow-offset-right-x: -15px;
+    --curve-shadow-offset-right-y: -15px;
+    --curve-shadow-offset-left-x: 15px;
+    --curve-shadow-offset-left-y: -15px;
+    --icon-size: 8.75rem;
+    --bitcoin-bg-gradient-top: #626A881A;
+    --bitcoin-bg-gradient-bottom: #EAB3000F;
+    --card-margin-x: 4rem;
+    --card-margin-y: 4rem;
+    --scale-container: 1;
+  }
+  
+  @media screen and (max-width: 425px) {
+    :root {
+      --curve-offset-x: -1rem; 
+      --curve-offset-y: 40%;
+      --curve-radius: 1.0rem; 
+      --curve-shadow-offset-right-x: -15px;
+      --curve-shadow-offset-right-y: -15px;
+      --curve-shadow-offset-left-x: 15px;
+      --curve-shadow-offset-left-y: -15px;
+      --icon-size: 4rem;
+      --card-margin-x: 1rem;
+      --card-margin-y: 0rem;
+      --scale-container: 0.8;
+      --scale-content: 0.8;
+    }
+  }
+  
+  @media screen and (max-width: 1440px) {
+    :root {
+      --scale-container: 0.8;
+      --scale-content: 0.8;
+    }
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(var(--scale-container));
+  }
+  
+  .card {
+    position: relative; 
+    background: linear-gradient(to bottom, var(--outer-bg-gradient-top), var(--outer-bg-gradient-bottom));
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .icon {
+    position: absolute;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background: var(--clr);
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    transform: translateY(-40%);
+  }
+  
+  .content {
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+    padding: var(--card-margin-y) var(--card-margin-x);
+    transform: scale(var(--scale-content));
+  }
+  
+  .icon::before {
+    content: '';
+    position: absolute;
+    top: var(--curve-offset-y);
+    left: var(--curve-offset-x);
+    width: var(--curve-radius);
+    height: var(--curve-radius);
+    background: transparent;
+    border-top-right-radius: var(--curve-radius);
+    box-shadow: var(--curve-shadow-offset-left-x) var(--curve-shadow-offset-left-y) 0 15px var(--clr);
+  }
+  
+  .icon::after {
+    content: '';
+    position: absolute;
+    top: var(--curve-offset-y);
+    right: var(--curve-offset-x);
+    width: var(--curve-radius);
+    height: var(--curve-radius);
+    background: transparent;
+    border-top-left-radius: var(--curve-radius);
+    box-shadow: var(--curve-shadow-offset-right-x) var(--curve-shadow-offset-right-y) 0 15px var(--clr);
+  }
