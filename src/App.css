@@ -5,132 +5,60 @@
   --border-color-gradient-bottom: #3B3F5700;
   --outer-bg-gradient-top: #626A881A;
   --outer-bg-gradient-bottom: #2E31491A;
-  --outer-border-radius: 20px; 
-  --inner-border-radius: 20px;
-  --left-curve-offset-x: -26px; 
-  --left-curve-offset-y: 54%; 
-  --right-curve-offset-x: -26px; 
-  --right-curve-offset-y: 54%; 
-  --shadow-offset: -10px;
-  --logo-bg-gradient-top: #626A881A;
-  --logo-bg-gradient-bottom: #EAB3000F;
+  --curve-offset-x: -1.5rem; 
+  --curve-offset-y: 40%;
+  --curve-radius: 1.5rem; 
+  --curve-shadow-offset-right-x: -15px;
+  --curve-shadow-offset-right-y: -15px;
+  --curve-shadow-offset-left-x: 15px;
+  --curve-shadow-offset-left-y: -15px;
+  --icon-size: 8.75rem;
   --bitcoin-bg-gradient-top: #626A881A;
   --bitcoin-bg-gradient-bottom: #EAB3000F;
+  --card-margin-x: 4rem;
+  --card-margin-y: 4rem;
+  --scale-container: 1;
+}
 
+@media screen and (max-width: 425px) {
+  :root {
+    --curve-offset-x: -1rem; 
+    --curve-offset-y: 40%;
+    --curve-radius: 1.0rem; 
+    --curve-shadow-offset-right-x: -15px;
+    --curve-shadow-offset-right-y: -15px;
+    --curve-shadow-offset-left-x: 15px;
+    --curve-shadow-offset-left-y: -15px;
+    --icon-size: 4rem;
+    --card-margin-x: 1rem;
+    --card-margin-y: 0rem;
+    --scale-container: 0.8;
+    --scale-content: 0.8;
+  }
+}
 
-  --container-padding: 40px;
+@media screen and (max-width: 1440px) {
+  :root {
+    --scale-container: 0.8;
+    --scale-content: 0.8;
+  }
 }
 
 body {
   background-color: var(--bg-color);
-  margin: 40px;
 }
 
-.currencyName { 
-  font-family: 'Tomorrow';
-}
-
-/* create a reactangular div with a curve at the top */
-
-.circularLogoContainer {
-  height: 60px;
-  width: 20%;
-  background-color: transparent;
-  position: absolute;
-  margin: 40px;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* TODO: Fix background position */
-.circularLogoBg {
-  background-color: var(--clr);
-  z-index: 999;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  display: flex;
-  border-radius: 50%;
-  transform: translate(0%, -40%);
-}
-
-.circularLogo {
-  background: linear-gradient(to bottom, var(--bitcoin-bg-gradient-top), var(--bitcoin-bg-gradient-bottom));
-  border-radius: 50%;
-  border: 10px solid var(--clr);
-  padding: 12px;
-  position: absolute;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  z-index: 1000;
-  transform: translate(0%, -40%);
-}
-
-.bitcoinLogoImage {
-  width: 40px;
-  height: 40px;
-}
-
-.circularLogo::before {
-  content: '';
-  position: absolute; 
-  top: var(--left-curve-offset-y);
-  left: var(--left-curve-offset-x);
-  /* width, height = border radius */
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border-top-right-radius: var(--inner-border-radius);
-  box-shadow: 0px var(--shadow-offset) 0 0 var(--clr);
-}
-
-.circularLogo::after {
-  content: '';
-  position: absolute; 
-  top: var(--right-curve-offset-y);
-  right: var(--right-curve-offset-x);
-  /* width, height = border radius */
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border-top-left-radius: var(--inner-border-radius);
-  box-shadow: 0px var(--shadow-offset) 0 0 var(--clr);
-}
-
-.outerContainer {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  border: 1px inset;
-  border-image: linear-gradient(to bottom, var(--border-color-gradient-top), var(--border-color-gradient-bottom));
-  border-radius: var(--outer-border-radius);
-  padding: 20px 30px;
-  height: 225px;
-  background: linear-gradient(to bottom, var(--outer-bg-gradient-top), var(--outer-bg-gradient-bottom)) padding-box;
-}
-
-
-/* ------------------------------------------------- */
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: var(--container-padding);
+  transform: scale(var(--scale-container));
 }
 
 .card {
   position: relative; 
-  width: 320px;
-  height: 450px;
   background: linear-gradient(to bottom, var(--outer-bg-gradient-top), var(--outer-bg-gradient-bottom));
-  margin: 30px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -138,35 +66,43 @@ body {
 }
 
 .icon {
-  position: relative;
-  width: 8.75rem;
-  height: 8.75rem;
+  position: absolute;
+  width: var(--icon-size);
+  height: var(--icon-size);
   background: var(--clr);
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
   transform: translateY(-40%);
+}
+
+.content {
+  display: flex;
+  position: relative;
+  margin-top: 2rem;
+  padding: var(--card-margin-y) var(--card-margin-x);
+  transform: scale(var(--scale-content));
 }
 
 .icon::before {
   content: '';
   position: absolute;
-  top: 40%;
-  left: -2.25rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  top: var(--curve-offset-y);
+  left: var(--curve-offset-x);
+  width: var(--curve-radius);
+  height: var(--curve-radius);
   background: transparent;
-  border-top-right-radius: 2.5rem;
-  box-shadow: 15px -15px 0 15px var(--clr);
+  border-top-right-radius: var(--curve-radius);
+  box-shadow: var(--curve-shadow-offset-left-x) var(--curve-shadow-offset-left-y) 0 15px var(--clr);
 }
 
 .icon::after {
   content: '';
   position: absolute;
-  top: 40%;
-  right: -2.25rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  top: var(--curve-offset-y);
+  right: var(--curve-offset-x);
+  width: var(--curve-radius);
+  height: var(--curve-radius);
   background: transparent;
-  border-top-left-radius: 2.5rem;
-  box-shadow: -15px -15px 0 15px var(--clr);
+  border-top-left-radius: var(--curve-radius);
+  box-shadow: var(--curve-shadow-offset-right-x) var(--curve-shadow-offset-right-y) 0 15px var(--clr);
 }

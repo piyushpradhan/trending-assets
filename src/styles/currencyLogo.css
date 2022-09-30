@@ -1,7 +1,18 @@
 :root {
-    --logo-bg-gradient-top: #626A881A;
-    --logo-bg-gradient-bottom: #EAB3000F;
+    --bitcoin-bg-gradient-top: #626A88;
+    --bitcoin-bg-gradient-bottom: #EAB300;
+    --logo-size: 100px;
+    --logo-padding: 20px;
+    --logo-margin-top: 20px;
 }
+
+@media screen and (max-width: 425px) {
+    :root {
+      --logo-size: 60px;
+      --logo-padding: 10px;
+      --logo-margin-top: 0px;
+    }
+  }
 
 .logoContainer {
     background: transparent;
@@ -12,11 +23,47 @@
     align-items: center;
 }
 
-.logo {
-    margin-top: 20px;
-    height: 100px;
-    width: 100px;
-    background: linear-gradient(to bottom, var(--logo-bg-gradient-top), var(--logo-bg-gradient-top));
-    border-radius: 100px;
-    padding: 20px;
+[class*=-logo] {
+    border-radius: 50%;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    padding: var(--logo-padding);
+    margin-top: var(--logo-margin-top);
+    backdrop-filter: blur(50px);
+}
+ 
+.bitcoin-logo {
+    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(234, 179, 0, 0.06) 100%);
+}
+
+.solana-logo {
+  background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(220, 31, 255, 0.1) 100%);
+
+}
+.binance-logo {
+  margin-top: var(--logo-margin-top);
+  height: var(--logo-size);
+  width: var(--logo-size);
+  background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(234, 179, 0, 0.06) 100%);
+  border-radius: var(--logo-size);
+  backdrop-filter: blur(50px);
+  padding: var(--logo-padding);
+}
+.ethereum-logo {
+  margin-top: var(--logo-margin-top);
+  height: var(--logo-size);
+  width: var(--logo-size);
+  background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(237, 240, 244, 0.1) 100%);
+  border-radius: var(--logo-size);
+  backdrop-filter: blur(50px);
+  padding: var(--logo-padding);
+}
+.shiba-logo {
+  margin-top: var(--logo-margin-top);
+  height: var(--logo-size);
+  width: var(--logo-size);
+  background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(228, 45, 4, 0.1) 100%);
+  border-radius: var(--logo-size);
+  backdrop-filter: blur(50px);
+  padding: var(--logo-padding);
 }
