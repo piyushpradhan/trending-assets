@@ -3,6 +3,7 @@ import CardBackground from "./CardBackground";
 import CurrencyLogo from "./CurrencyLogo";
 import { Currency } from "../constants/types";
 import { captureRejectionSymbol } from "stream";
+import "../styles/customCard.css";
 
 function Card({ currency }: Currency) {
   return (
